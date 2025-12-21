@@ -2,7 +2,7 @@ import React from 'react'
 import { FaHome } from "react-icons/fa";
 import { FaPhoneAlt } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
-import logo_neu from '../../src/assets/Logo_NEU.png'
+import logo_neu from '/Logo_NEU.png'
 import { FaFacebook, FaInstagram} from "react-icons/fa"
 
 const Footer = () => {
