@@ -7,6 +7,7 @@ import { IoIosHeartEmpty } from "react-icons/io";
 import { FiShoppingCart } from "react-icons/fi";
 import avtImg from "../assets/avatar.png";
 import { useState } from 'react';
+import { useSelector } from 'react-redux';
 
 const navigation = [
   {name: "Tổng quan", href: "/dashboard"},
@@ -18,6 +19,9 @@ const navigation = [
 const Navbar = () => {
   const [isdropdownOpen, setisdropdownOpen] = useState(false);
   console.log(isdropdownOpen);
+
+  const cartItems = useSelector(state => state.cart.cartItems);
+  console.log(cartItems);
 
   const currentuser = false;
   return (
@@ -73,9 +77,11 @@ const Navbar = () => {
 
               <Link to  = "/cart" className='bg-primary p-1 sm:px-6 px-2 flex items-center rounded-sm'> 
                 <FiShoppingCart className=''/>
-                <span className='text-sm font-semibold sm:ml-1'>
-                  0
-                </span>
+                {
+                  cartItems.length > 0 ? <span className='text-sm font-semibold sm:ml-1'>{cartItems.length}</span>
+                  : <span className='text-sm font-semibold sm:ml-1'>0</span>
+                }
+                
               </Link>
             </div>
         </nav>
