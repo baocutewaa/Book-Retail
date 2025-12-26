@@ -18,7 +18,7 @@ const cartSlice = createSlice({
                     icon: "success",
                     title: "Product Added to the Cart",
                     showConfirmButton: false,
-                    timer: 1500
+                    timer: 750
                   });
             } else(
                 Swal.fire({
